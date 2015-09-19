@@ -1,0 +1,9 @@
+<ul class="results">
+    {{ #playlist }}
+    <li>
+        <a data-track-playlist="{{ uri }}"><i class="fa fa-thumbs-up" />
+        </a>
+        <span class="track tooltip" title="Added: {{ user.display_name }}">{{ track }}</span> <span class="artist">{{ artist }}</span>
+    </li>
+    {{ /playlist }}
+</ul>

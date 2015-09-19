@@ -1,0 +1,9 @@
+{{ #playing.user }}
+<span class="blame">// {{ playing.user.display_name }}</span> {{ /playing.user }}
+<h1 id="artist">{{ playing.artist.name }}</h1>
+<h2 id="track">{{ playing.track.name }}</h2>
+<h3 id="album">{{ playing.album.name }}</h3>
+
+<div class="upcoming">
+    <span><strong>NEXT</strong> <i class="fa fa-chevron-right" /> {{ #playing.next }}<strong>{{ playing.next.track }}</strong> {{ playing.next.artist }}</span>{{ /playing.next }} {{ ^playing.next }}Last Song :( {{ /playing.next }}
+</div>

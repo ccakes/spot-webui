@@ -1,0 +1,127 @@
+// import nib for cross browser features
+@import 'nib'
+@import 'rupture'
+  
+html, body 
+  height 100%
+  font-size 100%
+
+*,*:before,*:after
+  box-sizing border-box
+
+.row
+  box-sizing border-box
+  display flex
+  flex 0 1 auto
+  flex-direction row
+  flex-wrap wrap
+  margin-right -0.5rem
+  margin-left -0.5rem
+  
+.row.reverse
+  flex-direction: row-reverse;
+
+.col.reverse
+  flex-direction: column-reverse;
+
+build($a)
+  .{$a},
+  .{$a}-1,
+  .{$a}-2,
+  .{$a}-3,
+  .{$a}-4,
+  .{$a}-5,
+  .{$a}-6,
+  .{$a}-7,
+  .{$a}-8,
+  .{$a}-9,
+  .{$a}-10,
+  .{$a}-11,
+  .{$a}-12,
+  .{$a}-offset-1,
+  .{$a}-offset-2,
+  .{$a}-offset-3,
+  .{$a}-offset-4,
+  .{$a}-offset-5,
+  .{$a}-offset-6,
+  .{$a}-offset-7,
+  .{$a}-offset-8,
+  .{$a}-offset-9,
+  .{$a}-offset-10,
+  .{$a}-offset-11,
+  .{$a}-offset-12
+    box-sizing border-box
+    display flex
+    flex 0 1 auto
+    flex-direction column
+    flex-grow 0
+    flex-shrink 0
+    padding-right 0.5rem
+    padding-left 0.5rem
+
+  .{$a} 
+    flex-grow 1
+    flex-basis 0
+    max-width 100%
+
+  .row.collapse
+    padding-right 0.5rem
+    padding-left 0.5rem
+    [class*="small-"],[class*="medium-"],[class*="large-"]
+      padding-right 0
+      padding-left 0
+
+  for num in (1..12)
+    .{$a}-{num}
+      -ms-flex-preferred-size (100% / 12) * num
+      flex-basis (100% / 12) * num
+      max-width (100% / 12) * num
+
+  for num in (1..12)
+    .{$a}-offset-{num}
+      margin-left (100% / 12) * num
+
+  .{$a}-start
+    justify-content flex-start
+    text-align start
+  .{$a}-center
+    justify-content center
+    text-align center
+  .{$a}-end
+    justify-content flex-end
+    text-align end
+  .{$a}-top
+    align-items flex-start
+  .{$a}-middle
+    align-items center
+  .{$a}-fill
+    [class*="small-"],[class*="medium-"],[class*="large-"]
+      flex 1
+  .{$a}-bottom
+    align-items flex-end
+  .{$a}-around
+    justify-content space-around
+  .{$a}-between
+    justify-content space-between
+  .{$a}-first
+    order -1
+  .{$a}-last
+    order 1
+  
+  .{$a}-hide
+    display: none !important;
+
+  .{$a}-show
+    display inherit !important
+
+
+build(small)
+
++above(48em)
+  build(medium)
+
++above(62em)
+  build(large)
+
++above(90em)
+  build(xlarge)

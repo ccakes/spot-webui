@@ -1,0 +1,9 @@
+<ul class="results">
+    {{ #results }}
+    <li>
+        <a data-track-results="{{ uri }}"><span class="track">{{ track }}</span> <span class="artist">{{ artist }}</span>
+        <br />
+        <span class="album">{{ album }}</span></a>
+    </li>
+    {{ /results }}
+</ul>
